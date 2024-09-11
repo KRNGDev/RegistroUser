@@ -3,7 +3,9 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  USR_API_KEY: '',
+  USR_BASE_URL: 'https://api.usr.albertolopma.top/user/'
 };
 
 /*
