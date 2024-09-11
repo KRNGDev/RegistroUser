@@ -1,0 +1,7 @@
+{
+  "name": "RegistroUser",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular-standalone"
+}
