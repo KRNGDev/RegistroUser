@@ -5,7 +5,7 @@
 export const environment = {
   production: false,
   USR_API_KEY: '',
-  USR_BASE_URL: 'https://api.usr.albertolopma.top/user/'
+  USR_BASE_URL: 'https://api.usr.albertolopma.top/user'
 };
 
 /*

@@ -1,0 +1,111 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>Registro de Usuario</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <ion-card class="card-style">
+    <ion-card-header>
+      <ion-card-title>Formulario de Registro</ion-card-title>
+    </ion-card-header>
+
+    <ion-card-content>
+      <form (submit)="submitForm()">
+        <!-- Nombre -->
+        <ion-item>
+          <ion-input
+            ngDefaultControl
+            label-placement="floating"
+            label="Nombre"
+            type="text"
+            placeholder="Introduce tu nombre"
+            [(ngModel)]="nombre"
+            name="nombre"
+          ></ion-input>
+        </ion-item>
+
+        <!-- Apellidos -->
+        <ion-item>
+          <ion-input
+            ngDefaultControl
+            label-placement="floating"
+            label="Apellidos"
+            type="text"
+            placeholder="Introduce tus apellidos"
+            [(ngModel)]="apellidos"
+            name="apellidos"
+          ></ion-input>
+        </ion-item>
+
+        <!-- Dirección -->
+        <ion-item>
+          <ion-textarea
+            ngDefaultControl
+            label-placement="floating"
+            label="Dirección"
+            placeholder="Introduce tu dirección"
+            [(ngModel)]="direccion"
+            name="direccion"
+          ></ion-textarea>
+        </ion-item>
+
+        <!-- Email -->
+        <ion-item>
+          <ion-input
+            ngDefaultControl
+            label-placement="floating"
+            label="Email"
+            type="email"
+            placeholder="Introduce tu email"
+            [(ngModel)]="email"
+            name="email"
+          ></ion-input>
+        </ion-item>
+
+        <!-- Disciplina -->
+        <ion-item>
+          <ion-select
+            [multiple]="true"
+            interface="popover"
+            ngDefaultControl
+            label="Disciplina"
+            label-placement="floating"
+            placeholder="Disciplina"
+            [(ngModel)]="disciplina"
+            name="disciplina"
+          >
+            <ion-select-option value="deporte">Deporte</ion-select-option>
+            <ion-select-option value="arte">Arte</ion-select-option>
+            <ion-select-option value="musica">Música</ion-select-option>
+            <ion-select-option value="ciencia">Ciencia</ion-select-option>
+          </ion-select>
+        </ion-item>
+
+        <!-- Telefono -->
+        <ion-item>
+          <ion-input
+            ngDefaultControl
+            label-placement="floating"
+            label="Telefono"
+            type="telephone"
+            placeholder="Introduce tu Telefono"
+            [(ngModel)]="telefono"
+            name="telefono"
+          ></ion-input>
+        </ion-item>
+
+        <!-- Foto -->
+
+        <ion-button color="secondary" expand="block" (click)="selectPhoto()"
+          >Subir Foto</ion-button
+        >
+
+        <!-- Botón de Enviar -->
+        <ion-button type="submit" expand="block" color="success" shape="round"
+          >Registrar</ion-button
+        >
+      </form>
+    </ion-card-content>
+  </ion-card>
+</ion-content>

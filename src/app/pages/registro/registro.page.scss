@@ -1,0 +1,49 @@
+ion-content {
+    --background: #f0f4f7;
+  }
+  
+  .card-style {
+    margin-top: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 15px;
+    background: linear-gradient(145deg, #ffffff, #e6e9ef);
+  }
+  #datosFila {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  
+  ion-item {
+    flex: 1;
+    margin: 0 5px; /* Ajusta el margen si es necesario */
+  }
+  
+  ion-item:first-child {
+    margin-left: 0; /* Elimina margen izquierdo para el primer item si no es necesario */
+  }
+  
+  ion-item:last-child {
+    margin-right: 0; /* Elimina margen derecho para el último item si no es necesario */
+  }
+  
+
+  ion-item {
+    --padding-start: 15px;
+    --border-color: #d1d8e0;
+    --background: #f8f9fc;
+    border-radius: 8px;
+    margin-bottom: 15px;
+  }
+  
+  ion-input, ion-textarea, ion-select {
+    font-size: 16px;
+    --placeholder-color: #a6b1bb;
+  }
+  
+  ion-button {
+    margin-top: 20px;
+    --box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    font-weight: bold;
+  }
+  
