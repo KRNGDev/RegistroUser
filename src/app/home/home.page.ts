@@ -1,32 +1,29 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { IonHeader, IonToolbar, IonTitle, IonContent, IonList, IonItemSliding, IonItem, IonAvatar, IonLabel, IonItemOptions, IonItemOption, IonIcon, IonCardSubtitle, IonCard, IonCardHeader, IonCardTitle, IonCardContent } from '@ionic/angular/standalone';
+import { IonHeader, IonMenuButton, IonToolbar, IonTitle, IonContent, IonList, IonItemSliding, IonItem, IonAvatar, IonLabel, IonItemOptions, IonItemOption, IonIcon, IonCardSubtitle, IonCard, IonCardHeader, IonCardTitle, IonCardContent, IonButtons } from '@ionic/angular/standalone';
 import { addIcons } from 'ionicons';
-import { pin, trash, share } from 'ionicons/icons';
+import { pin, trash, share, } from 'ionicons/icons';
 import { ApiusrService } from '../service/api-usr/apiusr.service';
 import { User } from '../interface/user';
+import { DatosAppService } from '../service/datosApp/datos-app.service';
+
 @Component({
   selector: 'app-home',
   templateUrl: 'home.page.html',
   styleUrls: ['home.page.scss'],
   standalone: true,
-  imports: [IonCardContent, CommonModule, IonCardTitle, IonCardHeader, IonCard, IonCardSubtitle, IonIcon, IonItemOption, IonItemOptions, IonLabel, IonAvatar, IonItem, IonItemSliding, IonList, IonHeader, IonToolbar, IonTitle, IonContent],
+  imports: [IonButtons, IonMenuButton, IonCardContent, CommonModule, IonCardTitle, IonCardHeader, IonCard, IonCardSubtitle, IonIcon, IonItemOption, IonItemOptions, IonLabel, IonAvatar, IonItem, IonItemSliding, IonList, IonHeader, IonToolbar, IonTitle, IonContent],
 })
 export class HomePage implements OnInit {
   private listaUser: User[] = [];
-  constructor(private http: ApiusrService) {
-    addIcons({ pin, trash, share });
-    this.cargarListUser();
+
+  constructor(private datos: DatosAppService) {
+    addIcons({ pin, share, trash });
+
   }
 
-  cargarListUser() {
-    this.http.getListUser().subscribe(list => {
-      this.listaUser = list;
-
-    })
-  }
   public getList(): User[] {
-    return this.listaUser;
+    return this.listaUser = this.datos.getList();
   }
 
   ngOnInit(): void {
