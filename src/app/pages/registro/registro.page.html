@@ -14,11 +14,10 @@
     </ion-card-header>
 
     <ion-card-content>
-      <form (submit)="submitForm(user)">
+      <ion-list>
         <!-- Nombre -->
         <ion-item>
           <ion-input
-            ngDefaultControl
             label-placement="floating"
             label="Nombre"
             type="text"
@@ -31,7 +30,6 @@
         <!-- Apellidos -->
         <ion-item>
           <ion-input
-            ngDefaultControl
             label-placement="floating"
             label="Apellidos"
             type="text"
@@ -43,20 +41,18 @@
 
         <!-- Dirección -->
         <ion-item>
-          <ion-textarea
-            ngDefaultControl
+          <ion-input
             label-placement="floating"
             label="Dirección"
             placeholder="Introduce tu dirección"
             [(ngModel)]="user.direccion"
             name="direccion"
-          ></ion-textarea>
+          ></ion-input>
         </ion-item>
 
         <!-- Email -->
         <ion-item>
           <ion-input
-            ngDefaultControl
             label-placement="floating"
             label="Email"
             type="email"
@@ -71,7 +67,6 @@
           <ion-select
             [multiple]="true"
             interface="popover"
-            ngDefaultControl
             label="Disciplina"
             label-placement="floating"
             placeholder="Disciplina"
@@ -88,7 +83,6 @@
         <!-- Telefono -->
         <ion-item>
           <ion-input
-            ngDefaultControl
             label-placement="floating"
             label="Telefono"
             type="telephone"
@@ -97,36 +91,27 @@
             name="telefono"
           ></ion-input>
         </ion-item>
-        <ion-item>
-          <ion-input
-            ngDefaultControl
-            label-placement="floating"
-            label="imagen"
-            type="text"
-            placeholder="Introduce tu imagen"
-            [(ngModel)]="user.imagenurl"
-            name="imagen"
-          ></ion-input>
-        </ion-item>
 
         <!-- Foto -->
+        <ion-item>
+          <ion-avatar *ngIf="photoService.fotos!==''" slot="end">
+            <img [src]="[photoService.fotos]" />
+          </ion-avatar>
 
-        <ion-button color="secondary" expand="block" (click)="selectPhoto()"
-          >Subir Foto</ion-button
-        >
-
+          <ion-button color="secondary" expand="block" (click)="selectPhoto()"
+            >Subir Foto</ion-button
+          >
+        </ion-item>
         <!-- Botón de Enviar -->
-        <ion-button type="submit" expand="block" color="success" shape="round"
+        <ion-button
+          (click)="submitForm(user)"
+          type="submit"
+          expand="block"
+          color="success"
+          shape="round"
           >Registrar</ion-button
         >
-      </form>
+      </ion-list>
     </ion-card-content>
   </ion-card>
-  <ion-button>
-    <ion-icon
-      aria-label="Atras"
-      size="large"
-      name="arrow-back-outline"
-    ></ion-icon>
-  </ion-button>
 </ion-content>
