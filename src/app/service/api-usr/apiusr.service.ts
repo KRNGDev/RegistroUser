@@ -15,16 +15,16 @@ export class ApiusrService {
 
   constructor() { }
 
- 
+
 
   getListUser(): Observable<User[]> {
     return this.http.get<User[]>(`${BASE_URL}`);
 
   }
-  
-  setUser(body:User){
-    console.log("Cuerpo",body);
-    this.http.post(BASE_URL,body).subscribe({
+
+  setUser(body: User) {
+    console.log("Cuerpo", body);
+    this.http.post(BASE_URL, body).subscribe({
       next: (response) => {
         // Petición exitosa
         console.log('Guardado con éxito:', response);
@@ -37,7 +37,7 @@ export class ApiusrService {
         console.log('Petición finalizada');
       }
     });;
-    
+
   }
 
 }

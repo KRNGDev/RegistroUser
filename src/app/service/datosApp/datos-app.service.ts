@@ -14,16 +14,18 @@ export class DatosAppService {
   }
 
   ListUser() {
-    this.http.getListUser().subscribe(list => {
-      if (list) {
-        this.listaUser = list;
-        return this.listaUser;
-      } else {
-        throw Error("Hubo un fallo en la carga")
-      }
-
-
-    });
+    try {
+      this.http.getListUser().subscribe(list => {
+        if (list) {
+          this.listaUser = list;
+          return this.listaUser;
+        } else {
+          throw Error("Hubo un fallo en la carga")
+        }
+      });
+    } catch (error) {
+      throw Error("fallo en la conexion error: " + error);
+    }
   }
   getList(): User[] {
     return this.listaUser;
