@@ -14,35 +14,19 @@ import { User } from 'src/app/interface/user';
   standalone: true,
   imports: [IonButtons, IonMenuButton, IonAvatar, IonIcon, IonList, IonButton, IonSelect, IonSelectOption, IonLabel, IonItem, IonCardContent, IonCardTitle, IonCardHeader, IonCard, IonContent, IonHeader, IonTitle, IonToolbar, CommonModule, FormsModule]
 })
-export class RegistroPage implements OnInit {
-  user: User = {
-    'nombre': '',
-    'apellido': '',
-
-
-    'email': '',
-    'telefono': '',
-    'imagenurl': ''
-  }
-  nombre: string = '';
-  apellidos: string = '';
-  direccion: string = '';
-  disciplina: string = '';
-  email: string = '';
-  telefono: string = '';
-  imagenurl: string = '';
+export class RegistroPage  {
+  user: User = {  }as User;
 
   constructor(private dataUser: ApiusrService) {
     addIcons({ arrowBackOutline });
   }
 
-  ngOnInit() {
-  }
   selectPhoto() {
 
   }
-  submitForm() {
-    this.dataUser.setUser()
-    console.log(this.nombre, this.apellidos, this.direccion, this.disciplina,)
+  submitForm(user:User) {
+    this.dataUser.setUser(user);
+    user={}as User;
+    
   }
 }

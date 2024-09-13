@@ -14,7 +14,7 @@
     </ion-card-header>
 
     <ion-card-content>
-      <form (submit)="submitForm()">
+      <form (submit)="submitForm(user)">
         <!-- Nombre -->
         <ion-item>
           <ion-input
@@ -23,7 +23,7 @@
             label="Nombre"
             type="text"
             placeholder="Introduce tu nombre"
-            [(ngModel)]="nombre"
+            [(ngModel)]="user.nombre"
             name="nombre"
           ></ion-input>
         </ion-item>
@@ -36,7 +36,7 @@
             label="Apellidos"
             type="text"
             placeholder="Introduce tus apellidos"
-            [(ngModel)]="apellidos"
+            [(ngModel)]="user.apellido"
             name="apellidos"
           ></ion-input>
         </ion-item>
@@ -48,7 +48,7 @@
             label-placement="floating"
             label="Dirección"
             placeholder="Introduce tu dirección"
-            [(ngModel)]="direccion"
+            [(ngModel)]="user.direccion"
             name="direccion"
           ></ion-textarea>
         </ion-item>
@@ -61,7 +61,7 @@
             label="Email"
             type="email"
             placeholder="Introduce tu email"
-            [(ngModel)]="email"
+            [(ngModel)]="user.email"
             name="email"
           ></ion-input>
         </ion-item>
@@ -75,7 +75,7 @@
             label="Disciplina"
             label-placement="floating"
             placeholder="Disciplina"
-            [(ngModel)]="disciplina"
+            [(ngModel)]="user.disciplina"
             name="disciplina"
           >
             <ion-select-option value="deporte">Deporte</ion-select-option>
@@ -93,8 +93,19 @@
             label="Telefono"
             type="telephone"
             placeholder="Introduce tu Telefono"
-            [(ngModel)]="telefono"
+            [(ngModel)]="user.telefono"
             name="telefono"
+          ></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-input
+            ngDefaultControl
+            label-placement="floating"
+            label="imagen"
+            type="text"
+            placeholder="Introduce tu imagen"
+            [(ngModel)]="user.imagenurl"
+            name="imagen"
           ></ion-input>
         </ion-item>
 

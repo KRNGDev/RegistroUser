@@ -16,41 +16,22 @@
     <ion-card-content>
       <ion-list [inset]="true">
         <ion-item-sliding *ngFor="let user of getList()">
-          <ion-item [button]="true">
+          <ion-item lines="none" [button]="true">
             <ion-avatar aria-hidden="true" slot="start">
               <img
                 alt=""
                 src="https://ionicframework.com/docs/img/demos/avatar.svg"
               />
             </ion-avatar>
-            <ion-label>{{user.nombre}} </ion-label>
+            <div id="datos">
+              <ion-label>{{user.nombre}}, {{user.apellido}} </ion-label>
+              <ion-note>{{user.telefono}} </ion-note>
+            </div>
           </ion-item>
-          <ion-item-options slot="end">
-            <ion-item-option color="warning">
-              <ion-icon slot="icon-only" name="pin"></ion-icon>
-            </ion-item-option>
-            <ion-item-option color="tertiary">
-              <ion-icon slot="icon-only" name="share"></ion-icon>
-            </ion-item-option>
-            <ion-item-option color="danger" expandable="true">
-              <ion-icon slot="icon-only" name="trash"></ion-icon>
-            </ion-item-option>
-          </ion-item-options>
+        
         </ion-item-sliding>
       </ion-list>
     </ion-card-content>
   </ion-card>
 
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>
-      Start with Ionic
-      <a
-        target="_blank"
-        rel="noopener noreferrer"
-        href="https://ionicframework.com/docs/components"
-        >UI Components</a
-      >
-    </p>
-  </div>
 </ion-content>

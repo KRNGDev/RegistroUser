@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { IonHeader, IonMenuButton, IonToolbar, IonTitle, IonContent, IonList, IonItemSliding, IonItem, IonAvatar, IonLabel, IonItemOptions, IonItemOption, IonIcon, IonCardSubtitle, IonCard, IonCardHeader, IonCardTitle, IonCardContent, IonButtons } from '@ionic/angular/standalone';
+import { IonHeader, IonMenuButton, IonToolbar, IonTitle, IonContent, IonList, IonItemSliding, IonItem, IonAvatar, IonLabel, IonItemOptions, IonItemOption, IonIcon, IonCardSubtitle, IonCard, IonCardHeader, IonCardTitle, IonCardContent, IonButtons, IonNote, IonButton } from '@ionic/angular/standalone';
 import { addIcons } from 'ionicons';
 import { pin, trash, share, } from 'ionicons/icons';
 import { ApiusrService } from '../service/api-usr/apiusr.service';
@@ -12,7 +12,7 @@ import { DatosAppService } from '../service/datosApp/datos-app.service';
   templateUrl: 'home.page.html',
   styleUrls: ['home.page.scss'],
   standalone: true,
-  imports: [IonButtons, IonMenuButton, IonCardContent, CommonModule, IonCardTitle, IonCardHeader, IonCard, IonCardSubtitle, IonIcon, IonItemOption, IonItemOptions, IonLabel, IonAvatar, IonItem, IonItemSliding, IonList, IonHeader, IonToolbar, IonTitle, IonContent],
+  imports: [IonButton, IonNote, IonButtons, IonMenuButton, IonCardContent, CommonModule, IonCardTitle, IonCardHeader, IonCard, IonCardSubtitle, IonIcon, IonItemOption, IonItemOptions, IonLabel, IonAvatar, IonItem, IonItemSliding, IonList, IonHeader, IonToolbar, IonTitle, IonContent],
 })
 export class HomePage implements OnInit {
   private listaUser: User[] = [];

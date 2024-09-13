@@ -9,6 +9,7 @@ import { mailOutline, exit, exitOutline, exitSharp, search, searchCircle, search
 @Component({
   selector: 'app-root',
   templateUrl: 'app.component.html',
+  styleUrls: ['app.component.scss'],
   standalone: true,
   imports: [IonTitle, RouterLink, RouterLinkActive, IonMenu, IonMenuToggle, IonFooter, IonIcon, IonLabel, IonItem, IonNote, IonListHeader, IonList, IonContent, FormsModule, CommonModule, IonMenuButton, IonSplitPane, IonApp, IonRouterOutlet],
 })
