@@ -8,21 +8,33 @@ import { Foto } from 'src/app/interface/foto';
   providedIn: 'root'
 })
 export class PhotoService {
-  public fotos: string = '';
+  public fotos: File | null = null;
+  public fotoUrl: string = '';
 
   constructor() { }
-  public async addNewToGallery() {
+  public async addNewToGallery():Promise<File | null> {
     // Take a photo
     const capturedPhoto = await Camera.getPhoto({
       resultType: CameraResultType.Uri,
       source: CameraSource.Camera,
       quality: 100
     });
-    this.fotos = capturedPhoto.webPath!;
+
+
+
+    // Convierte la imagen a un archivo blob
+    const response = await fetch(capturedPhoto.webPath!);
+    const blob = await response.blob();
+
+    this.fotos = new File([blob], `foto_${new Date().getTime()}.jpeg`, {
+      type: 'image/jpeg'
+    });
+
+    this.fotoUrl = capturedPhoto.webPath!;
     console.log("esta es la foto", this.fotos);
-  }
-  getFoto(): string {
-    this.addNewToGallery();
     return this.fotos;
+  }
+  public async getFoto(): Promise<File | null> {
+    return await this.addNewToGallery();
   }
 }

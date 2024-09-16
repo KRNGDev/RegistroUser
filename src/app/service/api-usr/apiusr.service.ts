@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { environment } from 'src/environments/environment';
 import { Observable } from 'rxjs';
 import { User } from 'src/app/interface/user';
+import { DatosAppService } from '../datosApp/datos-app.service';
 
 const BASE_URL = environment.USR_BASE_URL;
 @Injectable({
@@ -22,22 +23,13 @@ export class ApiusrService {
 
   }
 
-  setUser(body: User) {
-    console.log("Cuerpo", body);
-    this.http.post(BASE_URL, body).subscribe({
-      next: (response) => {
-        // Petición exitosa
-        console.log('Guardado con éxito:', response);
-      },
-      error: (err) => {
-        // Ocurrió un error
-        console.error('Error al guardar:', err);
-      },
-      complete: () => {
-        console.log('Petición finalizada');
-      }
-    });;
+  
+  setUser(body: FormData): Observable<any> {
+    return this.http.post(BASE_URL, body);
+  }
 
+  delete(id:number): Observable<any>{
+   return this.http.delete(`${BASE_URL}/${id}`,{ responseType: 'text' });
   }
 
 }
