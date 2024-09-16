@@ -12,12 +12,12 @@ export class PhotoService {
   public fotoUrl: string = '';
 
   constructor() { }
-  public async addNewToGallery():Promise<File | null> {
+  public async addNewToGallery(): Promise<File | null> {
     // Take a photo
     const capturedPhoto = await Camera.getPhoto({
       resultType: CameraResultType.Uri,
       source: CameraSource.Camera,
-      quality: 100
+      quality: 50
     });
 
 
@@ -29,12 +29,13 @@ export class PhotoService {
     this.fotos = new File([blob], `foto_${new Date().getTime()}.jpeg`, {
       type: 'image/jpeg'
     });
-
+    console.log(this.fotos.size);
     this.fotoUrl = capturedPhoto.webPath!;
     console.log("esta es la foto", this.fotos);
     return this.fotos;
   }
   public async getFoto(): Promise<File | null> {
+
     return await this.addNewToGallery();
   }
 }

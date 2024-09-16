@@ -12,6 +12,10 @@ export const routes: Routes = [
   },
   {
     path: 'registro',
-    loadComponent: () => import('./pages/registro/registro.page').then( m => m.RegistroPage)
+    loadComponent: () => import('./pages/registro/registro.page').then(m => m.RegistroPage)
+  },
+  {
+    path: 'ficha/:id',
+    loadComponent: () => import('./pages/ficha/ficha.page').then(m => m.FichaPage)
   },
 ];

@@ -6,14 +6,14 @@ import { pin, trashOutline, share, } from 'ionicons/icons';
 import { ApiusrService } from '../service/api-usr/apiusr.service';
 import { User } from '../interface/user';
 import { DatosAppService } from '../service/datosApp/datos-app.service';
-
+import { RouterLink, RouterLinkActive } from '@angular/router';
 
 @Component({
   selector: 'app-home',
   templateUrl: 'home.page.html',
   styleUrls: ['home.page.scss'],
   standalone: true,
-  imports: [IonButton, IonNote, IonButtons, IonMenuButton, IonCardContent, CommonModule, IonCardTitle, IonCardHeader, IonCard, IonCardSubtitle, IonIcon, IonItemOption, IonItemOptions, IonLabel, IonAvatar, IonItem, IonItemSliding, IonList, IonHeader, IonToolbar, IonTitle, IonContent],
+  imports: [IonButton, RouterLink, RouterLinkActive, IonNote, IonButtons, IonMenuButton, IonCardContent, CommonModule, IonCardTitle, IonCardHeader, IonCard, IonCardSubtitle, IonIcon, IonItemOption, IonItemOptions, IonLabel, IonAvatar, IonItem, IonItemSliding, IonList, IonHeader, IonToolbar, IonTitle, IonContent],
 })
 export class HomePage implements OnInit {
   private listaUser: User[] = this.datos.getList();
@@ -27,14 +27,14 @@ export class HomePage implements OnInit {
   public getList(): User[] {
     this.listaUser = this.datos.getList();
 
-    return this.listaUser ;
+    return this.listaUser;
   }
 
   borrarContacto(id: number) {
     console.log("borrandooo..." + id);
     this.datos.deleteUser(id);
   }
- ngOnInit(): void {
-     this.datos.ListUser();
- }
+  ngOnInit(): void {
+    this.datos.ListUser();
+  }
 }

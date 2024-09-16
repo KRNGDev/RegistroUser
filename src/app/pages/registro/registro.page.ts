@@ -10,6 +10,7 @@ import { PhotoService } from 'src/app/service/photo/photo.service';
 import { RedirectCommand, Router } from '@angular/router';
 import { DatosAppService } from 'src/app/service/datosApp/datos-app.service';
 
+
 @Component({
   selector: 'app-registro',
   templateUrl: './registro.page.html',
@@ -31,6 +32,7 @@ export class RegistroPage {
 
   async submitForm(user: User) {
     const fotoFile = this.photoService.fotos;
+    console.log(fotoFile?.size);
 
     if (fotoFile) {
       const formData = new FormData();
@@ -53,6 +55,8 @@ export class RegistroPage {
       });
     } else {
       console.error('No photo selected');
+
     }
+    console.log(fotoFile?.size);
   }
 }

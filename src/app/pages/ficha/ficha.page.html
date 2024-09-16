@@ -1,0 +1,66 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="primary">
+    <ion-title>Ficha Usuario </ion-title>
+    <ion-buttons slot="end">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <div id="container">
+    <div class="profile-container">
+      <div class="header">
+        <ion-icon name="arrow-back-outline" class="back-icon"></ion-icon>
+        <h2 class="profile-title"></h2>
+      </div>
+      <ion-card>
+        <div class="profile-content">
+          <img
+            class="avatar"
+            [alt]="['imagen ',getDetalleUser()?.nombre]"
+            [src]="['https://api.usr.albertolopma.top/img/'+getDetalleUser()?.imagenurl]"
+          />
+
+          <div class="profile-info">
+            <p class="profile-name ion-text-capitalize">
+              {{getDetalleUser()?.nombre}}
+            </p>
+            <p>Puntos RA:</p>
+            <p class="profile-joined">Joined in</p>
+            <p class="profile-location"></p>
+          </div>
+
+          <ion-button expand="block" class="follow-button">Hola</ion-button>
+        </div>
+
+        <div class="interests">
+          <div class="interest">
+            <ion-icon name="fitness-outline"></ion-icon>
+            <p>Yoga</p>
+          </div>
+          <div class="interest">
+            <ion-icon name="walk-outline"></ion-icon>
+            <p>Hiking</p>
+          </div>
+          <div class="interest">
+            <ion-icon name="globe-outline"></ion-icon>
+            <p>Travel</p>
+          </div>
+          <div class="interest">
+            <ion-icon name="restaurant-outline"></ion-icon>
+            <p>Foodie</p>
+          </div>
+          <div class="interest">
+            <ion-icon name="book-outline"></ion-icon>
+            <p>Books</p>
+          </div>
+          <div class="interest">
+            <ion-icon name="color-palette-outline"></ion-icon>
+            <p>Art</p>
+          </div>
+        </div>
+      </ion-card>
+    </div>
+  </div>
+</ion-content>
