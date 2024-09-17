@@ -5,6 +5,7 @@ import { RouterLink, RouterLinkActive } from '@angular/router';
 import { IonApp, IonMenu, IonMenuToggle, IonMenuButton, IonRouterOutlet, IonSplitPane, IonContent, IonList, IonListHeader, IonNote, IonItem, IonLabel, IonIcon, IonFooter, IonTitle } from '@ionic/angular/standalone';
 import { addIcons } from 'ionicons';
 import { mailOutline, exit, exitOutline, exitSharp, search, searchCircle, searchOutline, searchSharp, searchCircleOutline, searchCircleSharp, library, libraryOutline, librarySharp, planet, planetOutline, planetSharp, home, homeOutline, homeSharp, mailSharp, paperPlaneOutline, paperPlaneSharp, heartOutline, heartSharp, archiveOutline, archiveSharp, trashOutline, trashSharp, warningOutline, warningSharp, bookmarkOutline, bookmarkSharp } from 'ionicons/icons';
+import { App } from '@capacitor/app';
 
 @Component({
   selector: 'app-root',
@@ -21,5 +22,9 @@ export class AppComponent {
   ];
   constructor() {
     addIcons({ mailOutline, exit, exitOutline, exitSharp, search, searchCircle, searchOutline, searchSharp, searchCircleOutline, searchCircleSharp, library, libraryOutline, librarySharp, planet, planetOutline, planetSharp, home, homeOutline, homeSharp, mailSharp, paperPlaneOutline, paperPlaneSharp, heartOutline, heartSharp, archiveOutline, archiveSharp, trashOutline, trashSharp, warningOutline, warningSharp, bookmarkOutline, bookmarkSharp });
+  }
+
+  salirApp(){
+    App.exitApp();
   }
 }

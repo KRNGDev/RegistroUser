@@ -25,13 +25,17 @@
 #container a {
   text-decoration: none;
 }
+ion-avatar {
+  --border-radius: 4px;
+}
+
 ion-item{
   background: #e9e8e8; /* Color de fondo para mensajes recibidos */
   color: #000;
-  border-radius: 15px;
-  margin: 5px;
-  padding: 8px 12px;
-  max-width: 85%; /* Limitar el ancho del mensaje */
+  border-radius: 5px;
+  margin: 10px;
+  padding: 5px 12px;
+  /* Limitar el ancho del mensaje */
 }
 ion-item::part(native){
   background-color: #00000000;

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { IonHeader, IonMenuButton, IonToolbar, IonTitle, IonContent, IonList, IonItemSliding, IonItem, IonAvatar, IonLabel, IonItemOptions, IonItemOption, IonIcon, IonCardSubtitle, IonCard, IonCardHeader, IonCardTitle, IonCardContent, IonButtons, IonNote, IonButton } from '@ionic/angular/standalone';
+import { IonHeader,IonThumbnail, IonMenuButton, IonToolbar, IonTitle, IonContent, IonList, IonItemSliding, IonItem, IonAvatar, IonLabel, IonItemOptions, IonItemOption, IonIcon, IonCardSubtitle, IonCard, IonCardHeader, IonCardTitle, IonCardContent, IonButtons, IonNote, IonButton, IonChip } from '@ionic/angular/standalone';
 import { addIcons } from 'ionicons';
 import { pin, trashOutline, share, } from 'ionicons/icons';
 import { ApiusrService } from '../service/api-usr/apiusr.service';
@@ -13,7 +13,7 @@ import { RouterLink, RouterLinkActive } from '@angular/router';
   templateUrl: 'home.page.html',
   styleUrls: ['home.page.scss'],
   standalone: true,
-  imports: [IonButton, RouterLink, RouterLinkActive, IonNote, IonButtons, IonMenuButton, IonCardContent, CommonModule, IonCardTitle, IonCardHeader, IonCard, IonCardSubtitle, IonIcon, IonItemOption, IonItemOptions, IonLabel, IonAvatar, IonItem, IonItemSliding, IonList, IonHeader, IonToolbar, IonTitle, IonContent],
+  imports: [IonChip, IonButton,IonThumbnail, RouterLink, RouterLinkActive, IonNote, IonButtons, IonMenuButton, IonCardContent, CommonModule, IonCardTitle, IonCardHeader, IonCard, IonCardSubtitle, IonIcon, IonItemOption, IonItemOptions, IonLabel, IonAvatar, IonItem, IonItemSliding, IonList, IonHeader, IonToolbar, IonTitle, IonContent],
 })
 export class HomePage implements OnInit {
   private listaUser: User[] = this.datos.getList();

@@ -15,24 +15,29 @@
       >
       <ion-card-subtitle></ion-card-subtitle>
     </ion-card-header>
-    <ion-card-content>
-      <ion-list [inset]="true">
+    <ion-card-content >
+      <ion-list  [inset]="true">
         <ion-item-sliding *ngFor="let user of getList()">
-          <ion-item
+          <ion-item 
+          class="ion-no-padding "
             lines="none"
             [button]="true"
             [routerLink]="['/ficha/',user.id]"
             routerLinkActive="router-link-active"
           >
-            <ion-avatar aria-hidden="true" slot="start">
+            <ion-avatar  aria-hidden="true" slot="start">
               <img
                 alt=""
                 [src]="['https://api.usr.albertolopma.top/img/'+user.imagenurl]"
               />
             </ion-avatar>
-            <div class="ion-text-end" id="datos">
-              <ion-label>{{user.nombre}}, {{user.apellido}} </ion-label>
-              <ion-note>{{user.telefono}} </ion-note>
+            <div class="ion-text-end ion-float-end datos">
+              <ion-label class="ion-text-capitalize">{{user.nombre}} {{user.apellido}} </ion-label>
+              <ion-chip >
+                <ion-avatar *ngFor="let dis of user.disciplina" >
+                  <img  alt="Silhouette of a person's head" [src]="['/assets/logos/logo'+dis+'.png']" />
+                </ion-avatar>                
+              </ion-chip>
             </div>
           </ion-item>
           <ion-item-options>

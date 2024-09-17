@@ -33,6 +33,7 @@
         <ion-item>
           <ion-input
           class="ion-text-capitalize"
+          autocorrect="on"
             required="true"
             label-placement="floating"
             label="Apellidos"
@@ -56,6 +57,19 @@
           ></ion-input>
         </ion-item>
 
+         <!-- Fecha de nacimiento -->
+         <ion-item>
+          <ion-input
+            required="true"
+            label-placement="floating"
+            type="date"
+            label="Fecha de nacimiento"
+            placeholder="Introduce tu Fecha de nacimiento"
+          
+            name="Fecha de nacimiento"
+          ></ion-input>
+        </ion-item>
+
         <!-- Email -->
         <ion-item>
           <ion-input
@@ -76,16 +90,17 @@
             interface="popover"
             label="Disciplina"
             label-placement="floating"
-            placeholder="Disciplina"
             [(ngModel)]="user.disciplina"
             name="disciplina"
           >
-            <ion-select-option value="deporte">Deporte</ion-select-option>
-            <ion-select-option value="arte">Arte</ion-select-option>
-            <ion-select-option value="musica">Música</ion-select-option>
-            <ion-select-option value="ciencia">Ciencia</ion-select-option>
+            <ion-select-option value="Aikido">Aikido</ion-select-option>
+            <ion-select-option value="Kenjutsu">Kenjutsu</ion-select-option>
+            <ion-select-option value="Karate">Karate</ion-select-option>
+            <ion-select-option value="Hapkido">Hapkido</ion-select-option>
           </ion-select>
         </ion-item>
+
+        
 
         <!-- Telefono -->
         <ion-item>
